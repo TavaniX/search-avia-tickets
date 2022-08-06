@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Filters from './components/Filters'
 import Categories from './components/Categories'
 import Ticket from './components/Ticket'
+import Button from './components/Button'
 
 import './scss/app.scss'
 
@@ -113,6 +114,7 @@ const App = () => {
                 <main>
                     <Categories />
                     <Ticket tickets={tickets} />
+                    <Button value={'показать еще 5 билетов'} />
                 </main>
             </div>
         </div>

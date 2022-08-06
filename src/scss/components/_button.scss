@@ -1,0 +1,27 @@
+@import '../variables';
+
+.button {
+    background: $primaryColor;
+    border-radius: $borderRadius;
+    color: $white;
+    text-transform: uppercase;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    box-shadow: $boxShadow;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $effectColor;
+        border: 1px solid $primaryColor;
+        color: $primaryColor;
+    }
+}
