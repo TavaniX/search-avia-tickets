@@ -15,7 +15,7 @@ body {
 
 .content {
     display: grid;
-    grid-template-columns: 235px auto;
+    grid-template-columns: 232px auto;
     column-gap: 20px;
 
     aside {
@@ -23,6 +23,5 @@ body {
     }
 
     main {
-        border: 1px solid blue;
     }
 }

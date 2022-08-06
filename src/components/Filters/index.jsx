@@ -1,5 +1,4 @@
 import React from 'react'
-
 import styles from './Filters.module.scss'
 
 const Filters = ({ transits }) => {

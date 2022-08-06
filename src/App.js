@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './components/Header'
 import Filters from './components/Filters'
+import Categories from './components/Categories'
 
 import './scss/app.scss'
 
@@ -24,7 +25,9 @@ const App = () => {
                     <Filters transits={transits} />
                     <Filters transits={companies} />
                 </aside>
-                <main>test2</main>
+                <main>
+                    <Categories />
+                </main>
             </div>
         </div>
     )
