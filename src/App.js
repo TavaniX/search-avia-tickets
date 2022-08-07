@@ -6,15 +6,15 @@ import Ticket from './components/Ticket'
 import Button from './components/Button'
 
 import './scss/app.scss'
+import axios from 'axios'
 
-const transits = {
-    title: 'количество пересадок',
-    values: ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки'],
-}
-const companies = {
-    title: 'компания',
-    values: ['Все', 'S7 Airlines', 'XiamenAir'],
-}
+const transits = [
+    // { id: 0, name: 'Без пересадок' },
+    { id: 1, name: '1 пересадка' },
+    { id: 2, name: '2 пересадки' },
+    { id: 3, name: '3 пересадки' },
+]
+
 const tickets = [
     {
         id: 0,
@@ -99,14 +99,34 @@ const tickets = [
     },
 ]
 
+const companiesURL = 'https://api.npoint.io/a1b1c28b32d9785bb26c'
+
 const App = () => {
+    const [companies, setCompanies] = React.useState(null)
+
+    React.useEffect(() => {
+        axios.get(companiesURL).then((response) => {
+            setCompanies(response.data)
+        })
+    }, [])
+
+    if (!companies) return null
+
     return (
         <div className='wrapper'>
             <Header />
             <div className='content'>
                 <aside>
-                    <Filters filterValues={transits} type='checkbox' />
-                    <Filters filterValues={companies} type='radio' />
+                    <Filters
+                        filterValues={transits}
+                        type='checkbox'
+                        title='количество пересадок'
+                    />
+                    <Filters
+                        filterValues={companies}
+                        type='radio'
+                        title='компании'
+                    />
                 </aside>
                 <main>
                     <Categories />
