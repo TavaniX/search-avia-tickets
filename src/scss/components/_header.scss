@@ -1,1 +1,13 @@
 @import '../variables';
+
+header {
+    display: flex;
+    align-self: center;
+    margin-bottom: 5px;
+
+    img {
+        margin: 0 auto;
+        height: 85px;
+        width: 85px;
+    }
+}

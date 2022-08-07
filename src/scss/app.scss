@@ -1,2 +1,20 @@
 @import './variables';
 @import './libs/normalize';
+@import 'components/all';
+
+body {
+    color: $fontColor;
+}
+
+.wrapper {
+    background-color: $backgroundColor;
+    width: 960px;
+    padding: 20px 104px 35px;
+    margin: 0 auto;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 232px auto;
+    column-gap: 20px;
+}
