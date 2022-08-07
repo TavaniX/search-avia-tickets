@@ -20,8 +20,6 @@
 
     &:hover {
         cursor: pointer;
-        background-color: $effectColor;
-        border: 1px solid $primaryColor;
-        color: $primaryColor;
+        font-weight: 700;
     }
 }

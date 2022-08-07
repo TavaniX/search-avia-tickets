@@ -17,7 +17,6 @@ const companies = {
     values: ['Все', 'S7 Airlines', 'XiamenAir'],
     type: 'radio',
 }
-
 const tickets = [
     {
         id: 0,
