@@ -10,12 +10,10 @@ import './scss/app.scss'
 const transits = {
     title: 'количество пересадок',
     values: ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки'],
-    type: 'checkbox',
 }
 const companies = {
     title: 'компания',
     values: ['Все', 'S7 Airlines', 'XiamenAir'],
-    type: 'radio',
 }
 const tickets = [
     {
@@ -107,8 +105,8 @@ const App = () => {
             <Header />
             <div className='content'>
                 <aside>
-                    <Filters filterValues={transits} />
-                    <Filters filterValues={companies} />
+                    <Filters filterValues={transits} type='checkbox' />
+                    <Filters filterValues={companies} type='radio' />
                 </aside>
                 <main>
                     <Categories />
