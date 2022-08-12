@@ -1,0 +1,9 @@
+@import '../../scss/components/all';
+@import '../../scss/variables';
+
+.main {
+    margin-top: 5px;
+    border: 1px solid $borderColor;
+    background-color: $effectColor;
+    border-radius: $borderRadius;
+}
