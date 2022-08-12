@@ -9,100 +9,17 @@ import './scss/app.scss'
 import axios from 'axios'
 
 const transits = [
-    // { id: 0, name: 'Без пересадок' },
     { id: 1, name: '1 пересадка' },
     { id: 2, name: '2 пересадки' },
     { id: 3, name: '3 пересадки' },
 ]
 
-const tickets = [
-    {
-        id: 0,
-        price: '13 400 P',
-        logo: 'S7',
-        destination: {
-            route: 'MOW-HKT',
-            time: '10:45 - 08:00',
-        },
-        duration: '21ч 15м',
-        transits: {
-            relevance: false,
-        },
-    },
-    {
-        id: 1,
-        price: '15 150 P',
-        logo: 'XiamenAir',
-        destination: {
-            route: 'MOW-HKT',
-            time: '10:45 - 08:00',
-        },
-        duration: '21ч 15м',
-        transits: {
-            relevance: true,
-            details: 'HKG, JNB',
-        },
-    },
-    {
-        id: 2,
-        price: '13 400 P',
-        logo: 'S7',
-        destination: {
-            route: 'MOW-HKT',
-            time: '10:45 - 08:00',
-        },
-        duration: '21ч 15м',
-        transits: {
-            relevance: false,
-        },
-    },
-    {
-        id: 3,
-        price: '15 150 P',
-        logo: 'XiamenAir',
-        destination: {
-            route: 'MOW-HKT',
-            time: '10:45 - 08:00',
-        },
-        duration: '21ч 15м',
-        transits: {
-            relevance: true,
-            details: 'HKG, JNB',
-        },
-    },
-    {
-        id: 4,
-        price: '15 150 P',
-        logo: 'XiamenAir',
-        destination: {
-            route: 'MOW-HKT',
-            time: '10:45 - 08:00',
-        },
-        duration: '21ч 15м',
-        transits: {
-            relevance: true,
-            details: 'HKG, JNB',
-        },
-    },
-    {
-        id: 5,
-        price: '13 400 P',
-        logo: 'S7',
-        destination: {
-            route: 'MOW-HKT',
-            time: '10:45 - 08:00',
-        },
-        duration: '21ч 15м',
-        transits: {
-            relevance: false,
-        },
-    },
-]
-
 const companiesURL = 'https://api.npoint.io/a1b1c28b32d9785bb26c'
+const ticketsURL = 'https://api.npoint.io/163b5e66df9f2741243e'
 
 const App = () => {
     const [companies, setCompanies] = React.useState(null)
+    const [tickets, setTickets] = React.useState(null)
 
     React.useEffect(() => {
         axios.get(companiesURL).then((response) => {
@@ -110,7 +27,14 @@ const App = () => {
         })
     }, [])
 
+    React.useEffect(() => {
+        axios.get(ticketsURL).then((response) => {
+            setTickets(response.data)
+        })
+    }, [])
+
     if (!companies) return null
+    if (!tickets) return null
 
     return (
         <div className='wrapper'>
