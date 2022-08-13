@@ -3,7 +3,7 @@ import ContentLoader from 'react-content-loader'
 
 const Skeleton = (props) => (
     <ContentLoader
-        speed={2}
+        speed={1}
         width={502}
         height={135}
         viewBox='0 0 502 135'
