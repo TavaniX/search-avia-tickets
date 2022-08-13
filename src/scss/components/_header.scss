@@ -25,10 +25,14 @@ header {
             height: 60px;
             width: 190px;
             margin: auto;
+            padding-left: 15px;
             color: $fontColor;
             text-transform: capitalize;
             &:first-child {
                 border-radius: 5px 0 0 5px;
+            }
+            &:nth-child(2) {
+                padding-left: 20px;
             }
             &:last-child {
                 border-radius: 0 5px 5px 0;

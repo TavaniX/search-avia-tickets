@@ -29,7 +29,6 @@ const App = () => {
     return (
         <div className='wrapper'>
             <Header />
-
             <div className='content'>
                 <aside>
                     <Filters
