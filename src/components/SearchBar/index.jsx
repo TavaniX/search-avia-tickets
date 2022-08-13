@@ -55,6 +55,7 @@ const SearchBar = () => {
                 placement='topRight'
                 format='DD.MM.YYYY'
                 suffixIcon={calendarIcon}
+                allowClear={false}
             />
             <DatePicker
                 placeholder='Обратно'
@@ -63,6 +64,7 @@ const SearchBar = () => {
                 placement='topRight'
                 format='DD.MM.YYYY'
                 suffixIcon={calendarIcon}
+                allowClear={false}
             />
         </div>
     )
