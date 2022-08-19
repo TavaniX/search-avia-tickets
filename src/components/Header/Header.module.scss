@@ -1,0 +1,18 @@
+@import '../../scss/variables';
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    img {
+        margin: 0 auto;
+        height: 85px;
+        width: 85px;
+    }
+
+    .line {
+        margin: 24px 0;
+        color: $lineColor;
+    }
+}

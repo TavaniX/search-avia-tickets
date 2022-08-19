@@ -4,12 +4,3 @@ export default function flyIntervals(startTime, endTime) {
 
     return `${start} - ${end}`
 }
-
-// import moment from 'moment'
-
-// export default function flyDuration(startTime, endTime) {
-//     const start = moment(startTime).format('DD MM YYYY hh:mm:ss', true)
-//     const end = moment(endTime).format('DD MM YYYY hh:mm:ss', true)
-
-//     return `${start} - ${end}`
-// }

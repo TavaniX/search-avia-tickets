@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Filters from './components/Filters'
 import Categories from './components/Categories'
 import Content from './components/Content'
+// import { useSelector, useDispatch } from 'react-redux'
 
 import './scss/app.scss'
 import axios from 'axios'
@@ -13,15 +14,21 @@ const transits = [
     { id: 3, name: '3 пересадки' },
 ]
 
-const companiesURL = 'https://api.npoint.io/a1b1c28b32d9785bb26c'
+const COMPANIES_URL = 'https://api.npoint.io/a1b1c28b32d9785bb26c'
+const CHECKBOX = 'checkbox'
+const RADIO = 'radio'
 
 const App = () => {
     const [companies, setCompanies] = React.useState(null)
 
     React.useEffect(() => {
-        axios.get(companiesURL).then((response) => {
-            setCompanies(response.data)
-        })
+        try {
+            axios.get(COMPANIES_URL).then((response) => {
+                setCompanies(response.data)
+            })
+        } catch (error) {
+            console.log('error getting companies: ', error)
+        }
     }, [])
 
     if (!companies) return null
@@ -33,12 +40,12 @@ const App = () => {
                 <aside>
                     <Filters
                         filterValues={transits}
-                        type='checkbox'
+                        type={CHECKBOX}
                         title='количество пересадок'
                     />
                     <Filters
                         filterValues={companies}
-                        type='radio'
+                        type={RADIO}
                         title='компании'
                     />
                 </aside>

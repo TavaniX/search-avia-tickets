@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './Ticket.module.scss'
 import IconS7 from '../../assets/S7 Logo.svg'
 import IconXiamen from '../../assets/XiamenAir Logo.svg'
@@ -9,6 +8,7 @@ const Ticket = ({ ticket }) => {
     const { id, companyId, price } = ticket
     const { origin, destination, dateStart, dateEnd, duration, stops } =
         ticket.info
+
     return (
         <>
             <div className={styles.wrapper} key={id}>

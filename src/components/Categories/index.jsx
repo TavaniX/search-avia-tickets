@@ -2,21 +2,27 @@ import React from 'react'
 import styles from './Categories.module.scss'
 
 const Categories = () => {
-    const [category, setCategory] = React.useState('самый дешевый')
-    const type = ['самый дешевый', 'самый быстрый', 'оптимальный']
+    const [category, setCategory] = React.useState(0)
+
+    const type = [
+        { id: 0, value: 'самый дешевый' },
+        { id: 1, value: 'самый быстрый' },
+        { id: 2, value: 'оптимальный' },
+    ]
 
     return (
         <div className={styles.categories_wrapper}>
-            {type.map((item, index) => {
+            {type.map((item) => {
+                const { id, value } = item
                 return (
                     <div
-                        key={item}
-                        onClick={() => setCategory(type[index])}
+                        key={id}
+                        onClick={() => setCategory(id)}
                         className={
-                            category === item ? styles.active : styles.category
+                            category === id ? styles.active : styles.category
                         }
                     >
-                        {type[index]}
+                        {value}
                     </div>
                 )
             })}

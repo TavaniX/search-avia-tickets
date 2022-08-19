@@ -13,10 +13,14 @@ const Content = () => {
     const [pages, setPages] = React.useState(5)
 
     React.useEffect(() => {
-        axios.get(ticketsURL).then((response) => {
-            setTickets(response.data)
-            setIsLoading(false)
-        })
+        try {
+            axios.get(ticketsURL).then((response) => {
+                setTickets(response.data)
+                setIsLoading(false)
+            })
+        } catch (error) {
+            console.log('error getting tickets: ', error)
+        }
     }, [pages])
 
     return (

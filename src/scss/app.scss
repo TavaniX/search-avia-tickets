@@ -1,16 +1,16 @@
 @import './variables';
 @import './libs/normalize';
-@import 'components/all';
 
 body {
     color: $fontColor;
+    background-color: $backgroundColor;
 }
 
 .wrapper {
-    background-color: $backgroundColor;
     width: 960px;
     padding: 20px 104px 35px;
     margin: 0 auto;
+    transition: 0.5 ease-in-out;
 }
 
 .content {

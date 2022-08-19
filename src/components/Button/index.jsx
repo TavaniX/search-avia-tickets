@@ -1,8 +1,8 @@
-import React from 'react'
+import styles from './Button.module.scss'
 
 const Button = ({ value, pages, setPages }) => {
     return (
-        <div className='button' onClick={() => setPages(pages + 5)}>
+        <div className={styles.button} onClick={() => setPages(pages + 5)}>
             {value}
         </div>
     )
