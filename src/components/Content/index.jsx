@@ -5,7 +5,7 @@ import axios from 'axios'
 import styles from '../Ticket/Skeleton.module.scss'
 import Button from '../Button'
 
-const ticketsURL = 'https://api.npoint.io/163b5e66df9f2741243e'
+const TICKETS_URL = 'https://api.npoint.io/163b5e66df9f2741243e'
 
 const Content = () => {
     const [isLoading, setIsLoading] = React.useState(true)
@@ -14,12 +14,12 @@ const Content = () => {
 
     React.useEffect(() => {
         try {
-            axios.get(ticketsURL).then((response) => {
+            axios.get(TICKETS_URL).then((response) => {
                 setTickets(response.data)
                 setIsLoading(false)
             })
         } catch (error) {
-            console.log('error getting tickets: ', error)
+            throw new error (`error getting tickets: ${error}`)
         }
     }, [pages])
 

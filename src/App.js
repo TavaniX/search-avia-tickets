@@ -27,14 +27,14 @@ const App = () => {
                 setCompanies(response.data)
             })
         } catch (error) {
-            console.log('error getting companies: ', error)
+            throw new error(`companies fetch error: ${error}`)
         }
     }, [])
 
     if (!companies) return null
 
-    return (
-        <div className='wrapper'>
+    return (1
+0        <div className='wrapper'>
             <Header />
             <div className='content'>
                 <aside>
