@@ -33,8 +33,8 @@ const App = () => {
 
     if (!companies) return null
 
-    return (1
-0        <div className='wrapper'>
+    return (
+        <div className='wrapper'>
             <Header />
             <div className='content'>
                 <aside>
