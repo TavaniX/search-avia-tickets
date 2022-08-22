@@ -1,0 +1,8 @@
+@import '../../scss/variables';
+
+.main {
+    margin-top: 18px;
+    border: 1px solid $borderColor;
+    background-color: $effectColor;
+    border-radius: $borderRadius;
+}

@@ -1,0 +1,37 @@
+@import '../../scss/variables';
+
+.categories_wrapper {
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+
+    div {
+        &:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+        &:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border: 1px solid $borderColor;
+        background: $white;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $effectColor;
+        }
+
+        &.active {
+            background-color: $primaryColor;
+            color: $white;
+        }
+    }
+}
