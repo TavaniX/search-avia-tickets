@@ -1,10 +1,13 @@
 import React from 'react'
 import styles from './Categories.module.scss'
+import { useSelector, useDispatch } from 'react-redux'
+import { setCategoryId } from '../../redux/slices/filterSlice'
 
 const Categories = () => {
-    const [category, setCategory] = React.useState(0)
+    const dispatch = useDispatch()
+    const categoryId = useSelector((state) => state.filter.categoryId)
 
-    const type = [
+    const types = [
         { id: 0, value: 'самый дешевый' },
         { id: 1, value: 'самый быстрый' },
         { id: 2, value: 'оптимальный' },
@@ -12,14 +15,14 @@ const Categories = () => {
 
     return (
         <div className={styles.categories_wrapper}>
-            {type.map((item) => {
-                const { id, value } = item
+            {types.map((type) => {
+                const { id, value } = type
                 return (
                     <div
                         key={id}
-                        onClick={() => setCategory(id)}
+                        onClick={() => dispatch(setCategoryId(id))}
                         className={
-                            category === id ? styles.active : styles.category
+                            categoryId === id ? styles.active : styles.category
                         }
                     >
                         {value}
