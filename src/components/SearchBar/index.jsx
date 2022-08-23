@@ -1,9 +1,9 @@
 import { DatePicker, Input } from 'antd'
 import { RiCalendarEventFill } from 'react-icons/ri'
-import 'antd/dist/antd.css'
-import styles from './SearchBar.module.scss'
 import ArrowLeft from '../../assets/arrow-left.svg'
 import ArrowRight from '../../assets/arrow-right.svg'
+import 'antd/dist/antd.css'
+import styles from './SearchBar.module.scss'
 
 const calendarIcon = <RiCalendarEventFill className={styles.dataIcon} />
 
