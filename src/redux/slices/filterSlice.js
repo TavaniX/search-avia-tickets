@@ -6,14 +6,14 @@ const initialState = {
         { id: 1, value: 'самый быстрый' },
         { id: 2, value: 'оптимальный' },
     ],
-    categoryId: 0,
-    companies: [],
     transits: [
         { id: 0, name: 'Без пересадок' },
         { id: 1, name: '1 пересадки' },
         { id: 2, name: '2 пересадки' },
         { id: 3, name: '3 пересадки' },
     ],
+    categoryId: 0,
+    companies: [],
     pages: 5,
 }
 
