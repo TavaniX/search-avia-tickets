@@ -1,8 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
-import companySlice from './slices/companySlice'
+import filter from './slices/filterSlice'
+import tickets from './slices/ticketsSlice'
+import isLoading from './slices/isLoadingSlice'
+import searchParams from './slices/searchParamsSlice'
 
 export const store = configureStore({
     reducer: {
-        companySlice,
+        filter,
+        tickets,
+        isLoading,
+        searchParams,
     },
 })
