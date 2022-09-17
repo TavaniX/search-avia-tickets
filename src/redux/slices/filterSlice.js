@@ -13,7 +13,6 @@ const initialState = {
         { id: 3, name: '3 пересадки' },
     ],
     categoryId: 0,
-    companies: [],
     pages: 5,
 }
 
@@ -24,15 +23,13 @@ const filterSlice = createSlice({
         setCategoryId(state, action) {
             state.categoryId = action.payload
         },
-        setCompanies(state, action) {
-            state.companies = action.payload
-        },
+
         setPages(state, action) {
             state.pages = action.payload
         },
     },
 })
 
-export const { setCategoryId, setCompanies, setPages } = filterSlice.actions
+export const { setCategoryId, setPages } = filterSlice.actions
 
 export default filterSlice.reducer

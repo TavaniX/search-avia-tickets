@@ -1,19 +1,27 @@
+import React from 'react'
+
 import Ticket from '../Ticket'
 import Skeleton from '../Ticket/Skeleton'
 import Button from '../Button'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchTickets } from '../../redux/slices/ticketsSlice'
 
 import styles from '../Ticket/Skeleton.module.scss'
 
 const Content = () => {
-    const isLoading = useSelector((state) => state.isLoading.isLoading)
-    const tickets = useSelector((state) => state.tickets.tickets)
+    const dispatch = useDispatch()
+
+    React.useEffect(() => {
+        dispatch(fetchTickets())
+    }, [])
+
+    const { tickets, status } = useSelector((state) => state.tickets)
     const pages = useSelector((state) => state.filter.pages)
 
     return (
         <>
             <div className='test'>
-                {isLoading
+                {status === 'loading'
                     ? [...new Array(pages)].map((_, index) => (
                           <Skeleton className={styles.main} key={index} />
                       ))

@@ -1,9 +1,18 @@
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchCompanies } from '../../redux/slices/companiesSlice'
+
 import styles from './Filters.module.scss'
-import { useSelector } from 'react-redux'
 
 const Filters = ({ type, title }) => {
+    const dispatch = useDispatch()
+
+    React.useEffect(() => {
+        dispatch(fetchCompanies())
+    }, [])
+
     let values = null
-    const companies = useSelector((state) => state.filter.companies)
+    const { companies } = useSelector((state) => state.companies)
     const transits = useSelector((state) => state.filter.transits)
 
     type === 'checkbox'
